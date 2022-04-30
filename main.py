@@ -7,6 +7,7 @@ def main():
     num_list = get_user_input()  # gets input values as a string which is converted into a list (type float)
     calc_average_temperature(num_list)
     calc_min_max_temperature(num_list)
+    calc_median_temperature(num_list) # sorts values in ascending value and finds median value
 
 
 def display_main_menu():
@@ -33,9 +34,16 @@ def calc_average_temperature(num_list):
 
 
 def calc_min_max_temperature(num_list):
-    temp_list = [max(num_list), min(num_list)]
-    print("Maximum and minimum value are", temp_list)
+    temp_list = [min(num_list), max(num_list)]
+    print("Minimum and maximum values are", temp_list, "respectively")
     return
+
+
+def calc_median_temperature(num_list):
+    num_list.sort()
+    print("List of values in ascending order:", num_list)
+    median = statistics.median(num_list)
+    print("The median value is", median)
 
 
 if __name__ == "__main__":
